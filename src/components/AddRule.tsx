@@ -18,7 +18,7 @@ function AddRule() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://backend:8080/rules', {
+      const response = await fetch('https://legaleagle-backend.onrender.com/rules', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
