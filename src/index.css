@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@tailwind utilities;
+
+:root {
+  --color-background: #121212;
+  --color-surface: #1C1C1C;
+  --color-primary: #3ECF8E;     /* Supabase Green */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A0A0A0;
+  --color-border: #2C2C2C;
+  --color-secondary: #6366F1;   /* Indigo */
+  --color-accent: #FF6B6B;      /* Coral */
+  --color-text-dark: #1F2937;   /* Deep Gray */
+  --color-text-light: #6B7280;  /* Soft Gray */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(62, 207, 142, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(62, 207, 142, 0.6); }
+}
+
+.animate-fadeIn { animation: fadeIn 0.8s ease-out; }
+.animate-slideInRight { animation: slideInRight 0.8s ease-out; }
+.animate-slideInLeft { animation: slideInLeft 0.8s ease-out; }
+.animate-slideInUp { animation: slideInUp 0.8s ease-out; }
+.animate-pulse-slow { animation: pulse 5s infinite; }
+
+body {
+  @apply 
+    bg-gradient-to-br 
+    from-gray-50 
+    via-white 
+    to-gray-100 
+    min-h-screen 
+    text-gray-900 
+    font-sans 
+    antialiased 
+    selection:bg-green-500/70 
+    selection:text-white;
+  font-family: 'Inter', 'SF Mono', 'Cascadia Code', 'Fira Code', monospace;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
+#root {
+  @apply 
+    flex 
+    flex-col 
+    min-h-screen 
+    w-full;
+  background-color: var(--color-background);
+}
+
+/* Custom Utility Classes */
+.gradient-text {
+  background: linear-gradient(45deg, var(--color-primary), #4299E1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: rgba(28, 28, 28, 0.7);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  animation: glow 2s infinite;
+  transform: translateY(-5px);
+}
+
+.code-block {
+  background-color: #1E1E1E;
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: 'Fira Code', monospace;
+  color: var(--color-primary);
+}
+
+.hover-lift {
+  @apply 
+    transition-all 
+    duration-300 
+    hover:-translate-y-1.5
+    hover:shadow-lg
+    active:translate-y-0
+    active:shadow-md;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(62, 207, 142, 0.5);
+}
+
+.btn-secondary {
+  @apply
+    bg-white
+    text-gray-700
+    border
+    border-gray-200
+    font-medium
+    py-2.5
+    px-6
+    rounded-full
+    hover:bg-gray-50
+    hover:shadow-md
+    active:bg-gray-100
+    active:shadow-inner
+    transition-all
+    duration-300
+    focus:outline-none
+    focus:ring-2
+    focus:ring-gray-200
+    focus:ring-offset-2;
+}
+
+.nav-link {
+  @apply
+    relative
+    text-gray-600
+    font-medium
+    hover:text-green-600
+    transition-colors
+    duration-300
+    after:absolute
+    after:w-0
+    after:h-0.5
+    after:bg-green-500
+    after:bottom-[-4px]
+    after:left-0
+    after:transition-all
+    after:duration-300
+    hover:after:w-full;
+}
+
+.nav-link.active {
+  @apply
+    text-green-600
+    after:w-full;
+}
+
+/* Dark mode for document viewer */
+.document-viewer {
+  @apply
+    bg-gradient-to-br
+    from-gray-900
+    via-gray-800
+    to-gray-900
+    text-white
+    rounded-xl
+    shadow-inner;
+}
+
+.file-input {
+  @apply
+    w-full
+    text-sm
+    text-gray-700
+    file:mr-4
+    file:py-2.5
+    file:px-5
+    file:rounded-full
+    file:border-0
+    file:text-sm
+    file:font-medium
+    file:bg-gradient-to-r
+    file:from-green-50
+    file:to-indigo-50
+    file:text-green-700
+    hover:file:bg-gradient-to-r
+    hover:file:from-green-100
+    hover:file:to-indigo-100
+    cursor-pointer
+    transition-all
+    duration-300;
+}
