@@ -160,7 +160,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     try {
       console.log('Fetching search results...');
       
-      const response = await fetch(`http://backend:8080/search?q=${encodeURIComponent(query)}`, {
+      const response = await fetch(`https://legaleagle-backend.onrender.com/search?q=${encodeURIComponent(query)}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
