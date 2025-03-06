@@ -22,7 +22,7 @@ interface DocumentUploadProps {
   title?: string;
 }
 
-const UPLOAD_ENDPOINT = import.meta.env.VITE_UPLOAD_ENDPOINT || 'http://backend:8080/upload';
+const UPLOAD_ENDPOINT = import.meta.env.VITE_UPLOAD_ENDPOINT || 'https://legaleagle-backend.onrender.com/upload';
 const UPLOAD_TIMEOUT = 120000; // 2 minutes timeout
 // const MAX_RETRIES = 3;
 // const BASE_RETRY_DELAY = 1000; // 1 second
