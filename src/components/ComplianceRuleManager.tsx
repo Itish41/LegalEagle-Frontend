@@ -27,7 +27,7 @@ const ComplianceRuleManager: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://backend:8080/rules');
+      const response = await fetch('https://legaleagle-backend.onrender.com/rules');
       if (!response.ok) {
         throw new Error(`Error fetching rules: ${response.statusText}`);
       }
@@ -52,7 +52,7 @@ const ComplianceRuleManager: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('http://backend:8080/rules', {
+      const response = await fetch('https://legaleagle-backend.onrender.com/rules', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
