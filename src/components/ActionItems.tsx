@@ -24,7 +24,7 @@ const ActionItems: React.FC = () => {
     const fetchActionItems = async () => {
       try {
         console.log('Fetching action items...');
-        const response = await fetch('http://backend:8080/action-items');
+        const response = await fetch('https://legaleagle-backend.onrender.com/action-items');
         if (!response.ok) {
           console.error(`Failed to fetch action items. Status: ${response.status}`);
           throw new Error('Failed to fetch action items');
@@ -44,7 +44,7 @@ const ActionItems: React.FC = () => {
   const handleComplete = async (id: string) => {
     try {
       console.log(`Attempting to complete action item: ${id}`);
-      const response = await fetch(`http://backend:8080/action-items/${id}/complete`, {
+      const response = await fetch(`https://legaleagle-backend.onrender.com/action-items/${id}/complete`, {
         method: 'PUT',
       });
       if (!response.ok) {
@@ -64,7 +64,7 @@ const ActionItems: React.FC = () => {
 
     try {
       console.log(`Assigning action item ${actionId} to ${assignEmail}`);
-      const response = await fetch(`http://backend:8080/action-update/${actionId}`, {
+      const response = await fetch(`https://legaleagle-backend.onrender.com/action-update/${actionId}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: assignEmail }),
