@@ -66,7 +66,7 @@ class ComplianceService {
   // Fetch compliance rules
   async getAllRules(): Promise<ComplianceRule[]> {
     try {
-      const response = await fetch(`${this.baseUrl}rules`, {
+      const response = await fetch(`https://legaleagle-backend.onrender.com/rules`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
