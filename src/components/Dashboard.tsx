@@ -260,7 +260,7 @@ const Dashboard = () => {
         const fetchDocuments = async () => {
             try {
                 setLoading(true);
-                const response = await fetch('http://backend:8080/dashboard');
+                const response = await fetch('https://legaleagle-backend.onrender.com/dashboard');
                 
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -303,7 +303,7 @@ const Dashboard = () => {
             const fetchDocuments = async () => {
                 try {
                     setLoading(true);
-                    const response = await fetch('http://backend:8080/dashboard');
+                    const response = await fetch('https://legaleagle-backend.onrender.com/dashboard');
                     
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);
